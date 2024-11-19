@@ -14,14 +14,14 @@
         <div class="header">
 
             <div class="menu-icon" onclick="toggleMenu()">
-                ☰ 
+                ☰
             </div>
 
             <div class="container-header">
                 <h1 class="nameFactory">Perfumería</h1>
                 <h1 class="nameFactoryTwo">Puré.</h1>
             </div>
-            
+
             <div class="option-header" id="navbar">
                 <ul>
                     <li><a href="#">HOME</a></li>
@@ -36,17 +36,13 @@
         </div>
 
         <div class="main">
-            <div class="grid-one">
-                <h1>Perfumeria Ocean</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut nihil cum voluptas quae ad quasi ab
-                    quos
-                    doloremque excepturi et officia adipisci, sed velit illum ex obcaecati? Alias, dolore
-                    deserunt!</p>
-
-                <div class="container-button">
-                    <button class="button-man">Perfumeria Hombre</button>
-                    <button class="button-woman">Perfumeria Mujer</button>
-                </div>
+            <div class="containerImage">
+                <img id="image" src="{{ asset('image/KhamrahVaner.jpg') }}" alt="Image">
+            </div>
+            <div class="selectImage">
+                <div id="imageOne"></div>
+                <div id="imageTwo"></div>
+                <div id="imageThree"></div>
             </div>
         </div>
     </div>
@@ -55,7 +51,21 @@
         function toggleMenu() {
             var navbar = document.getElementById('navbar');
             navbar.classList.toggle('active');
-        } 
+        }
+
+        const imageOne = document.getElementById("imageOne")
+        const imageTwo = document.getElementById("imageTwo")
+        const imageThree = document.getElementById("imageTheree")
+        const image = document.getElementById("image")
+
+        imageOne.onclick = function(){
+            image.src = "./image/KhamrahVaner.jpg"
+        }
+        imageTwo.onclick = function(){
+            image.src = "./image/BadeeAlOutVaner.webp"
+        }
+
     </script>
 </body>
+
 </html>
