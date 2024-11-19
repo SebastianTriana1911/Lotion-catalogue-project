@@ -19,16 +19,19 @@
 
             <div class="container-header">
                 <h1 class="nameFactory">Perfumería</h1>
-                <h1 class="nameFactoryTwo">Ocean.</h1>
+                <h1 class="nameFactoryTwo">Puré.</h1>
             </div>
             
             <div class="option-header" id="navbar">
                 <ul>
-                    <li><a href="">HOME</a></li>
-                    <li><a href="">CATÁLOGO</a></li>
-                    <li><a href="">PERFUMERÍA FEMENINA</a></li>
-                    <li><a href="">PERFUMERÍA MASCULINA</a></li>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">CATÁLOGO</a></li>
+                    <li><a href="#">PERFUMERÍA FEMENINA</a></li>
+                    <li><a href="#">PERFUMERÍA MASCULINA</a></li>
                 </ul>
+                <div class="close-icon" onclick="toggleMenu()">
+                    x
+                </div>
             </div>
         </div>
 
@@ -50,7 +53,8 @@
 
     <script>
         function toggleMenu() {
-            var navbar = document.getElementById('navbar'); navbar.classList.toggle('active');
+            var navbar = document.getElementById('navbar');
+            navbar.classList.toggle('active');
         } 
     </script>
 </body>

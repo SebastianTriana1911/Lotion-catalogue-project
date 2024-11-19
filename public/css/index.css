@@ -1,8 +1,8 @@
+/*Import for font of the page*/
 @import url('https://fonts.googleapis.com/css2?family=Faculty+Glyphic&display=swap');
 
 body {
     font-family: "Faculty Glyphic", sans-serif;
-    font-weight: 400;
     font-style: normal;
     background-color: black;
     color: #e1c498;
@@ -51,19 +51,17 @@ body {
 }
 
 .menu-icon {
-    display: none;
-    font-size: 30px;
+    display: none; /*With this property the icon "munu-icon" not be shown*/
+    font-size: 30px; /*Size of icon*/
     cursor: pointer;
     color: white;
 }
 
 .option-header {
     display: flex;
-    justify-content: center;
-    align-items: center;
     width: 45%;
     margin-right: 4%;
-    transition: max-height 0.5s ease-out;
+    transition: max-height 0.5s ease-out, transform 0.5s ease-out, opacity 0.5s ease-out;
 }
 
 .option-header ul {
@@ -75,16 +73,16 @@ body {
     margin: 0;
     font-weight: bolder;
     gap: 15px;
-    transition: transform 0.5s ease; /* Animación de deslizamiento */
+    transition: transform 0.5s ease;
 }
 
 .option-header ul li {
     display: flex;
     text-align: center;
-    position: relative;
 }
 
 .option-header ul li a {
+    align-items: center;
     text-decoration: none;
     color: #e1c498;
     display: inline-block;
@@ -111,6 +109,16 @@ body {
 
 .option-header ul li a:hover {
     color: white;
+}
+
+.close-icon {
+    position: absolute; 
+    top: 20px; 
+    right: 20px; 
+    font-size: 30px; 
+    cursor: pointer;
+    color: black;
+    font-weight: bolder;
 }
 
 .main {
@@ -149,35 +157,59 @@ body {
 
 /* Media Queries for Responsiveness */
 @media (max-width: 900px) {
-    .header{
+    .header {
         display: flex;
         justify-content: start;
     }
 
     .menu-icon {
+        /*With this property be showin the icon*/
         display: block;
     }
 
     .option-header {
-        display: none;
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
         width: 100%;
-        max-height: 0; /* Oculta el menú inicialmente */ overflow: hidden; /* Oculta contenido cuando está colapsado */
+        height: 100%;
+        background-color: rgb(221, 219, 219);
+        flex-direction: column;
+        justify-content: center;
+        transform: translateX(-100%);
+        transition: 0.5 ease-out, opacity 0.5s ease-out;
+        z-index: 1000;
+        opacity: 0;
     }
 
     .option-header.active {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        max-height: 100%; /* Ajusta este valor según la altura del contenido */ overflow: visible; /* Muestra contenido cuando está expandido */
+        transform: translateX(0);
+        opacity: 2;
     }
 
     .option-header ul {
         flex-direction: column;
         width: 100%;
-        transform: translateX(-100%); /* Inicialmente fuera de la pantalla a la izquierda */ 
+        align-items: center;
     }
 
     .option-header ul li {
-        margin: 10px 0;
+        padding: 20px;
+    }
+
+    .option-header ul li a {
+        color: #000;
+        font-weight: bolder;
+        font-size: 18px;
+    }
+
+    .option-header ul li a:hover {
+        color: black;
+    }
+
+    .option-header ul li a::after {
+        background-color: black;
+        border-radius: 3px;
     }
 }
