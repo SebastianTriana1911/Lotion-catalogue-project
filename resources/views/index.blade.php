@@ -47,25 +47,7 @@
         </div>
     </div>
 
-    <script>
-        function toggleMenu() {
-            var navbar = document.getElementById('navbar');
-            navbar.classList.toggle('active');
-        }
-
-        const imageOne = document.getElementById("imageOne")
-        const imageTwo = document.getElementById("imageTwo")
-        const imageThree = document.getElementById("imageTheree")
-        const image = document.getElementById("image")
-
-        imageOne.onclick = function(){
-            image.src = "./image/KhamrahVaner.jpg"
-        }
-        imageTwo.onclick = function(){
-            image.src = "./image/BadeeAlOutVaner.webp"
-        }
-
-    </script>
+    <script src="{{asset("js/index.js")}}"></script>
 </body>
 
 </html>

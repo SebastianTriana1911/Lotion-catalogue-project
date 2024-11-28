@@ -24,7 +24,7 @@ body {
     width: 100%;
     align-items: center;
     justify-content: space-between;
-    height: 90px;
+    height: 80px;
     border-bottom: 2px solid white;
 }
 
@@ -129,7 +129,43 @@ body {
     background-color: aqua;
 }
 
+.containerImage{
+    position: relative;
+    width: 100%;
+    height: 550px;
+    background-color: red;
+}
+
+#image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+    transition: opacity 1s ease-in-out
+}
+
+.selectImage{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+
+#imageOne {
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    cursor: pointer;
+}
+
 #imageTwo {
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    cursor: pointer;
+}
+
+#imageThree {
     width: 30px;
     height: 30px;
     background-color: red;
