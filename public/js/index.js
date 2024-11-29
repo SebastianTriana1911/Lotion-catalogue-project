@@ -5,58 +5,64 @@ function toggleMenu() {
 }
 
 
+
 const imageOne = document.getElementById("imageOne");
 const imageTwo = document.getElementById("imageTwo");
 const imageThree = document.getElementById("imageThree");
 const imageSelected = document.getElementById("image")
 
-imageOne.onclick = function(){
-    imageSelected.src = "./image/KhamrahVaner.jpg"
+imageOne.onclick = function() {
+    currentIndex = 0;
+    slideshowContainer.style.transform = `translateX(0)`;
+}
+ 
+imageTwo.onclick = function() {
+    currentIndex = 1; 
+    slideshowContainer.style.transform = `translateX(-100%)`;
 }
 
-imageTwo.onclick = function(){
-    imageSelected.src = "./image/BadeeAlOutVaner.webp"
+imageThree.onclick = function() { 
+    currentIndex = 2;
+    slideshowContainer.style.transform = `translateX(-200%)`;
 }
 
-imageThree.onclick = function(){
-    imageSelected.src = "./image/Dior.webp"
-}
 
-// resources/js/index.js
-
-// Array de URLs de las imágenes que queremos mostrar en la presentación.
+// Array with the URL of the images to display
 const imageArray = [
     "./image/KhamrahVaner.jpg",
     "./image/BadeeAlOutVaner.webp",
     "./image/Dior.webp"
 ];
 
-// Índice inicial para controlar qué imagen se está mostrando.
+// Index reffering to the image being displayed
 let currentIndex = 0;
 
-// Obtenemos el elemento img del DOM donde las imágenes serán mostradas.
+// Obtenemos el contenedor del slideshow del DOM. 
+const slideshowContainer = document.querySelector('.slideShow');
+
+// We get the img element that is being displayed in the DOM
 const imageElement = document.getElementById('image');
 
-// Función para mostrar la siguiente imagen.
+// Function for view the next img
 function showNextImage() {
-    // Incrementamos el índice de la imagen actual.
-    currentIndex++;
-
-    // Si el índice es mayor o igual al número de imágenes, reiniciamos a 0.
+    // Increment of index of the image current
+    currentIndex = currentIndex + 1;
+    
+    // If the index is elderly or equal the number of elements of it array, we restart to 0. This with the end of start again from the first image
     if (currentIndex >= imageArray.length) {
         currentIndex = 0;
     }
 
-    // Cambiamos el src del elemento img a la siguiente imagen en el array.
-    imageElement.src = imageArray[currentIndex];
+    // Ajustamos el contenedor del slideshow para mover las imágenes hacia la izquierda. 
+    slideshowContainer.style.transform = `translateX(-${currentIndex * 100}%)`
 }
 
-// Esta función se llama una vez cuando la página se carga completamente.
+// This function is called when once when the page battery is fully charged.
 document.addEventListener('DOMContentLoaded', (event) => {
     // Mostramos la primera imagen inicialmente.
-    imageElement.src = imageArray[currentIndex];
+    slideshowContainer.style.transform = `translateX(0)`;
 
-    // Configuramos un intervalo para cambiar las imágenes cada 3 segundos.
-    setInterval(showNextImage, 3000); // 3000 milisegundos = 3 segundos
+    // We set an interval to change images every 3 seconds.
+    setInterval(showNextImage, 4000); // 3000 milisegundos = 3 segundos
 });
 

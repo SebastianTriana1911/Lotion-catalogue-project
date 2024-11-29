@@ -10,26 +10,26 @@
 </head>
 
 <body>
-    <div class="grid-container">
+    <div class="gridContainer">
         <div class="header">
 
-            <div class="menu-icon" onclick="toggleMenu()">
+            <div class="menuIcon" onclick="toggleMenu()">
                 ☰
             </div>
 
-            <div class="container-header">
+            <div class="containerHeader">
                 <h1 class="nameFactory">Perfumería</h1>
                 <h1 class="nameFactoryTwo">Puré.</h1>
             </div>
 
-            <div class="option-header" id="navbar">
+            <div class="optionHeader" id="navbar">
                 <ul>
                     <li><a href="#">HOME</a></li>
                     <li><a href="#">CATÁLOGO</a></li>
                     <li><a href="#">PERFUMERÍA FEMENINA</a></li>
                     <li><a href="#">PERFUMERÍA MASCULINA</a></li>
                 </ul>
-                <div class="close-icon" onclick="toggleMenu()">
+                <div class="closeIcon" onclick="toggleMenu()">
                     x
                 </div>
             </div>
@@ -37,17 +37,22 @@
 
         <div class="main">
             <div class="containerImage">
-                <img id="image" src="{{ asset('image/KhamrahVaner.jpg') }}" alt="Image">
+                <div class="slideShow">
+                    <img id="image" src="{{ asset('image/KhamrahVaner.jpg') }}" alt="Image" class="slide">
+                    <img id="image2" src="{{ asset('/image/BadeeAlOutVaner.webp') }}" alt="Image2" class="slide">
+                    <img id="image3" src="{{ asset('/image/Dior.webp') }}" alt="image3" class="slide">
+                </div>
+                <div class="selectImage">
+                    <div id="imageOne"></div>
+                    <div id="imageTwo"></div>
+                    <div id="imageThree"></div>
+                </div>
             </div>
-            <div class="selectImage">
-                <div id="imageOne"></div>
-                <div id="imageTwo"></div>
-                <div id="imageThree"></div>
-            </div>
+            
         </div>
     </div>
 
-    <script src="{{asset("js/index.js")}}"></script>
+    <script src="{{ asset('js/index.js') }}"></script>
 </body>
 
 </html>

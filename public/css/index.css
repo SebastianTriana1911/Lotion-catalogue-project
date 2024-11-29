@@ -8,16 +8,7 @@ body {
     color: #e1c498;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-areas:
-        "header"
-        "main";
-    gap: 10px ;
-}
-
 .header {
-    grid-area: header;
     display: flex;
     padding: 0;
     margin: 0;
@@ -28,13 +19,13 @@ body {
     border-bottom: 2px solid white;
 }
 
-.header .container-header {
+.header .containerHeader {
     display: flex;
     align-items: center;
     margin-left: 7%;
 }
 
-.header .container-header .nameFactory{
+.header .containerHeader .nameFactory{
     display: flex;
     font-size: 20pt;
     justify-content: center;
@@ -42,7 +33,7 @@ body {
     color: #e1c498;
 }
 
-.header .container-header .nameFactoryTwo {
+.header .containerHeader .nameFactoryTwo {
     display: flex;
     font-size: 20pt;
     justify-content: center;
@@ -51,21 +42,21 @@ body {
     margin-left: 5px;
 }
 
-.menu-icon {
+.menuIcon {
     display: none; /*With this property the icon "munu-icon" not be shown*/
     font-size: 30px; /*Size of icon*/
     cursor: pointer;
     color: white;
 }
 
-.option-header {
+.optionHeader {
     display: flex;
     width: 45%;
     margin-right: 4%;
     transition: max-height 0.5s ease-out, transform 0.5s ease-out, opacity 0.5s ease-out;
 }
 
-.option-header ul {
+.optionHeader ul {
     display: flex;
     width: 100%;
     justify-content: space-around;
@@ -77,12 +68,12 @@ body {
     transition: transform 0.5s ease;
 }
 
-.option-header ul li {
+.optionHeader ul li {
     display: flex;
     text-align: center;
 }
 
-.option-header ul li a {
+.optionHeader ul li a {
     align-items: center;
     text-decoration: none;
     color: #e1c498;
@@ -91,7 +82,7 @@ body {
     transition: color 0.5s ease;
 }
 
-.option-header ul li a::after {
+.optionHeader ul li a::after {
     content: '';
     position: absolute;
     left: 50%;
@@ -103,16 +94,16 @@ body {
     transition: width 0.5s ease, left 0.5s ease;
 }
 
-.option-header ul li a:hover::after {
+.optionHeader ul li a:hover::after {
     width: 100%;
     left: 0;
 }
 
-.option-header ul li a:hover {
+.optionHeader ul li a:hover {
     color: white;
 }
 
-.close-icon {
+.closeIcon {
     position: absolute; 
     top: 20px; 
     right: 20px; 
@@ -123,55 +114,44 @@ body {
 }
 
 .main {
-    grid-area: main;
     width: 100%;
     height: 100%;
     background-color: aqua;
 }
 
-.containerImage{
+.containerImage {
     position: relative;
     width: 100%;
-    height: 550px;
-    background-color: red;
+    height: 100%;
+    overflow: hidden;
+    margin-top: 10px;
 }
 
-#image{
-    width: 100%;
+.slideShow {
+    display: flex;
+    height: 570px;
+    transition: transform 1s ease-in-out; /* Transición suave */ 
+}
+
+.slide { 
+    min-width: 100%;
     height: 100%;
     object-fit: cover;
-    margin: 0;
-    padding: 0;
-    transition: opacity 1s ease-in-out
 }
 
-.selectImage{
+.selectImage {
     display: flex;
-    width: 100%;
-    gap: 10px;
+    justify-content: center;
+    gap: 10px; 
 }
 
-#imageOne {
+#imageOne, #imageTwo, #imageThree {
     width: 30px;
-    height: 30px;
+    height: 30px; 
     background-color: red;
     cursor: pointer;
+    border-radius: 50px;
 }
-
-#imageTwo {
-    width: 30px;
-    height: 30px;
-    background-color: red;
-    cursor: pointer;
-}
-
-#imageThree {
-    width: 30px;
-    height: 30px;
-    background-color: red;
-    cursor: pointer;
-}
-
 
 /* Media Queries for Responsiveness */
 @media (max-width: 900px) {
@@ -180,12 +160,12 @@ body {
         justify-content: start;
     }
 
-    .menu-icon {
+    .menuIcon {
         /*With this property be showin the icon*/
         display: block;
     }
 
-    .option-header {
+    .optionHeader {
         display: flex;
         position: fixed;
         top: 0;
@@ -201,32 +181,32 @@ body {
         opacity: 0;
     }
 
-    .option-header.active {
+    .optionHeader.active {
         transform: translateX(0);
         opacity: 2;
     }
 
-    .option-header ul {
+    .optionHeader ul {
         flex-direction: column;
         width: 100%;
         align-items: center;
     }
 
-    .option-header ul li {
+    .optionHeader ul li {
         padding: 20px;
     }
 
-    .option-header ul li a {
+    .optionHeader ul li a {
         color: #000;
         font-weight: bolder;
         font-size: 18px;
     }
 
-    .option-header ul li a:hover {
+    .optionHeader ul li a:hover {
         color: black;
     }
 
-    .option-header ul li a::after {
+    .optionHeader ul li a::after {
         background-color: black;
         border-radius: 3px;
     }
