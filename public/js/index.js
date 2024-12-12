@@ -6,32 +6,31 @@ function toggleMenu() {
 
 
 
-const imageOne = document.getElementById("imageOne");
-const imageTwo = document.getElementById("imageTwo");
-const imageThree = document.getElementById("imageThree");
-const imageSelected = document.getElementById("image")
+const buttonImageOne = document.getElementById("buttonImageOne");
+const buttonImageTwo = document.getElementById("buttonImageTwo");
+const buttonImageThree = document.getElementById("buttonImageThree");
+// const imageSelected = document.getElementById("image")
 
-imageOne.onclick = function() {
+buttonImageOne.onclick = function() {
     currentIndex = 0;
     slideshowContainer.style.transform = `translateX(0)`;
 }
  
-imageTwo.onclick = function() {
+buttonImageTwo.onclick = function() {
     currentIndex = 1; 
     slideshowContainer.style.transform = `translateX(-100%)`;
 }
 
-imageThree.onclick = function() { 
+buttonImageThree.onclick = function() { 
     currentIndex = 2;
     slideshowContainer.style.transform = `translateX(-200%)`;
 }
 
-
 // Array with the URL of the images to display
 const imageArray = [
-    "./image/KhamrahVaner.jpg",
-    "./image/BadeeAlOutVaner.webp",
-    "./image/Dior.webp"
+    "./image/oneMillion.jpeg",
+    "./image/oneMillion.jpeg",
+    "./image/oneMillion.jpeg"
 ];
 
 // Index reffering to the image being displayed
@@ -63,6 +62,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     slideshowContainer.style.transform = `translateX(0)`;
 
     // We set an interval to change images every 3 seconds.
-    setInterval(showNextImage, 4000); // 3000 milisegundos = 3 segundos
+    setInterval(showNextImage, 10000); // 3000 milisegundos = 3 segundos
 });
 
